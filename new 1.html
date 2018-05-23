@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>Barra de Progressão</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body style="background-color:#e6e6e6;">
+	<div style="position:absolute;top:20%;left:35%;">
+		<div id="progressionBar" style="width:300px;height:50px;float:left;">
+			<div id="Bar" style="height:100%;background-color:green;width:0%;"></div>
+		</div>
+		<div id="Porcentagem" style="font-size:50px;font-family:Calibri;float:left;margin-left:10px;"></div>
+		<div id="Carregando" style="font-family:Calibri;"></div>
+		<div id="CarregandoErros" style="font-family:Calibri;">Erro:<br/></div>
+	</div>
+	<script>
+		$(document).ready(function(){
+			var percent = 0;
+			var interval = setInterval(function(){ 
+				document.getElementById("Bar").style.width = percent+"%";
+				document.getElementById("Porcentagem").innerHTML = percent+"%";
+				document.getElementById("Carregando").innerHTML = "<b>Carregando: "+"arquivo_v"+percent+".txt</b>";
+				if(percent%7==0){
+					document.getElementById("CarregandoErros").innerHTML += "Carregando: "+"arquivo_v"+percent+".txt<br/>";
+				}
+				percent++;
+				if(percent>100){
+					clearInterval(interval);
+				}
+			}, 10);
+		});
+	</script>
+</body>
+</html>
