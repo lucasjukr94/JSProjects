@@ -2,11 +2,18 @@
 <html>
 <head>
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" href="../AdminLTE-2.4.3/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../AdminLTE-2.4.3/bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../AdminLTE-2.4.3/bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="../AdminLTE-2.4.3/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="../AdminLTE-2.4.3/dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 <script src="alertBox.js"></script>
 </head>
 <body>
 <input type="text" id="titulo"/>
 <input type="text" id="mensagem"/>
-<button type="button" id="btnAlertar" onclick="alertBox(document.getElementById('mensagem').value,document.getElementById('titulo').value);">Enviar</button>
+<input type="text" id="tipo"/>
+<button type="button" id="btnAlertar" onclick="alertBox(document.getElementById('mensagem').value,document.getElementById('titulo').value,document.getElementById('tipo').value);">Enviar</button>
 </body>
 </html>
