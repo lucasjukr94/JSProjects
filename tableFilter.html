@@ -1,0 +1,780 @@
+<html>
+<head>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+<style>
+tr > th{
+	background-color:lightblue;
+}
+</style>
+</head>
+<body>
+Search:<input type="text" onchange="filter('tabFilter',this.value)"/>
+<table id="tabFilter" class="table table-bordered table-hover table-condensed table-striped" style="width: 100%; border: solid medium #467592;">
+	<thead>
+		<tr>
+			<th style="text-align: center;" class="PrintSome">
+				<button id="btnPreencherPddExcluir" name="enviar" value="excluir" type="submit" class="btn btn-xs btn-danger">Excluir</button>
+				<input value="071" id="FiltroComissao_CodigoGerente" name="FiltroComissao.CodigoGerente" type="hidden">
+				<input value="Aline Sales" id="FiltroComissao_NomeCompletoGerente" name="FiltroComissao.NomeCompletoGerente" type="hidden">
+				<input value="2019-04-01" data-val="true" data-val-date="The field MesAnoDataLiberacao must be a date." id="FiltroComissao_MesAnoDataLiberacao" name="FiltroComissao.MesAnoDataLiberacao" type="hidden">
+			</th>
+			<th><div class="PrintBackgroundColor">Dt.Ref.</div></th>
+			<th><div class="PrintBackgroundColor">Obs</div></th>
+			<th><div class="PrintBackgroundColor">Gerente</div></th>
+			<th><div class="PrintBackgroundColor">Cód.Ced.</div></th>
+			<th><div class="PrintBackgroundColor">Cedente</div></th>
+			<th><div class="PrintBackgroundColor">Cód.Sac.</div></th>
+			<th><div class="PrintBackgroundColor">Sacado</div></th>
+			<th><div class="PrintBackgroundColor">Borderô</div></th>
+			<th><div class="PrintBackgroundColor">Dt.Borderô</div></th>
+			<th><div class="PrintBackgroundColor">Dcto</div></th>
+			<th><div class="PrintBackgroundColor">Vencimento</div></th>
+			<th><div class="PrintBackgroundColor">Dias</div></th>
+			<th><div class="PrintBackgroundColor">Valor</div></th>
+			<th><div class="PrintBackgroundColor">Estado</div></th>
+		</tr>
+	</thead>
+	<tbody>
+
+			<tr style="background-color:lightgray" title="Pdd inserido nos cálculos" class="">
+					<td style="text-align: center;" class="PrintSome">
+						<input data-pddexcluirinclusos="2001407902" data-val="true" data-val-required="The CheckBox field is required." id="ListaTitulosVencidos60DiasPdd_0__CheckBox" name="ListaTitulosVencidos60DiasPdd[0].CheckBox" type="checkbox" value="true"><input name="ListaTitulosVencidos60DiasPdd[0].CheckBox" type="hidden" value="false">
+						<input value="2001407902" data-val="true" data-val-number="The field Ctrl_Id must be a number." data-val-required="The Ctrl_Id field is required." id="ListaTitulosVencidos60DiasPdd_0__Ctrl_Id" name="ListaTitulosVencidos60DiasPdd[0].Ctrl_Id" type="hidden">
+						<input value="125" data-val="true" data-val-number="The field AjusteId must be a number." id="ListaTitulosVencidos60DiasPdd_0__AjusteId" name="ListaTitulosVencidos60DiasPdd[0].AjusteId" type="hidden">
+					</td>
+					<td>31/03/2019</td>
+					<td>Descontado Com. 03/2019</td>
+					<td>Aline Sales</td>
+					<td>
+						<a href="#" onclick="checkPddCedente(this);return false;">
+							167874
+						</a>
+					</td>
+					<td>DIHEMA DISTRIBUIDORA DE P</td>
+					<td>
+						<a href="#" onclick="checkPddSacado(this);return false;">
+							183000
+						</a>
+					</td>
+					<td>E A DA SILVA PRODUTOS ALIMENTI</td>
+					<td>
+						<a href="#" onclick="checkPddBordero(this);return false;">
+							47771
+						</a>
+					</td>
+					<td>30/11/2018</td>
+					<td>22132</td>
+					<td>04/01/2019</td>
+					<td>98</td>
+					<td>
+						R$ 15.372,00
+						<input value="15372.00" data-val="true" data-val-number="The field ValorAberto must be a number." id="ListaTitulosVencidos60DiasPdd_0__ValorAberto" name="ListaTitulosVencidos60DiasPdd[0].ValorAberto" type="hidden">
+					</td>
+					<td>Baixado da Cobranca </td>
+			</tr>
+			<tr style="background-color:lightgray" title="Pdd inserido nos cálculos" class="">
+					<td style="text-align: center;" class="PrintSome">
+						<input data-pddexcluirinclusos="2001407901" data-val="true" data-val-required="The CheckBox field is required." id="ListaTitulosVencidos60DiasPdd_1__CheckBox" name="ListaTitulosVencidos60DiasPdd[1].CheckBox" type="checkbox" value="true"><input name="ListaTitulosVencidos60DiasPdd[1].CheckBox" type="hidden" value="false">
+						<input value="2001407901" data-val="true" data-val-number="The field Ctrl_Id must be a number." data-val-required="The Ctrl_Id field is required." id="ListaTitulosVencidos60DiasPdd_1__Ctrl_Id" name="ListaTitulosVencidos60DiasPdd[1].Ctrl_Id" type="hidden">
+						<input value="106" data-val="true" data-val-number="The field AjusteId must be a number." id="ListaTitulosVencidos60DiasPdd_1__AjusteId" name="ListaTitulosVencidos60DiasPdd[1].AjusteId" type="hidden">
+					</td>
+					<td>06/03/2019</td>
+					<td>Descontado Com. 02/2019</td>
+					<td>Aline Sales</td>
+					<td>
+						<a href="#" onclick="checkPddCedente(this);return false;">
+							167874
+						</a>
+					</td>
+					<td>DIHEMA DISTRIBUIDORA DE P</td>
+					<td>
+						<a href="#" onclick="checkPddSacado(this);return false;">
+							175893
+						</a>
+					</td>
+					<td>N.M. DE OLIVEIRA - ME</td>
+					<td>
+						<a href="#" onclick="checkPddBordero(this);return false;">
+							47771
+						</a>
+					</td>
+					<td>30/11/2018</td>
+					<td>22131</td>
+					<td>21/12/2018</td>
+					<td>112</td>
+					<td>
+						R$ 11.550,00
+						<input value="11550.00" data-val="true" data-val-number="The field ValorAberto must be a number." id="ListaTitulosVencidos60DiasPdd_1__ValorAberto" name="ListaTitulosVencidos60DiasPdd[1].ValorAberto" type="hidden">
+					</td>
+					<td>Baixado da Cobranca </td>
+			</tr>
+			<tr style="background-color:" title="" class="PrintSome">
+					<td style="text-align: center;" class="PrintSome">
+						<input data-pddexcluir="2001301376" data-val="true" data-val-required="The CheckBox field is required." id="ListaTitulosVencidos60DiasPdd_2__CheckBox" name="ListaTitulosVencidos60DiasPdd[2].CheckBox" onchange="calcular10Pdd(this);" type="checkbox" value="true"><input name="ListaTitulosVencidos60DiasPdd[2].CheckBox" type="hidden" value="false">
+						<input value="2001301376" data-val="true" data-val-number="The field Ctrl_Id must be a number." data-val-required="The Ctrl_Id field is required." id="ListaTitulosVencidos60DiasPdd_2__Ctrl_Id" name="ListaTitulosVencidos60DiasPdd[2].Ctrl_Id" type="hidden">
+						<input value="" data-val="true" data-val-number="The field AjusteId must be a number." id="ListaTitulosVencidos60DiasPdd_2__AjusteId" name="ListaTitulosVencidos60DiasPdd[2].AjusteId" type="hidden">
+					</td>
+					<td>31/01/2019</td>
+					<td>Gerente assumiu a conta após a PDD</td>
+					<td>Aline Sales</td>
+					<td>
+						<a href="#" onclick="checkPddCedente(this);return false;">
+							78129
+						</a>
+					</td>
+					<td>ECLETICA AGRICOLA LTDA</td>
+					<td>
+						<a href="#" onclick="checkPddSacado(this);return false;">
+							155025
+						</a>
+					</td>
+					<td>SAMI MAQUINAS E IMPLEMENTOS AG</td>
+					<td>
+						<a href="#" onclick="checkPddBordero(this);return false;">
+							45100
+						</a>
+					</td>
+					<td>27/09/2018</td>
+					<td>30501/2</td>
+					<td>29/11/2018</td>
+					<td>134</td>
+					<td>
+						R$ 31.117,60
+						<input value="31117.60" data-pddvalor="" data-val="true" data-val-number="The field ValorAberto must be a number." id="ListaTitulosVencidos60DiasPdd_2__ValorAberto" name="ListaTitulosVencidos60DiasPdd[2].ValorAberto" type="hidden">
+					</td>
+					<td>Baixado da Cobranca </td>
+			</tr>
+			<tr style="background-color:" title="" class="PrintSome">
+					<td style="text-align: center;" class="PrintSome">
+						<input data-pddexcluir="2001301375" data-val="true" data-val-required="The CheckBox field is required." id="ListaTitulosVencidos60DiasPdd_3__CheckBox" name="ListaTitulosVencidos60DiasPdd[3].CheckBox" onchange="calcular10Pdd(this);" type="checkbox" value="true"><input name="ListaTitulosVencidos60DiasPdd[3].CheckBox" type="hidden" value="false">
+						<input value="2001301375" data-val="true" data-val-number="The field Ctrl_Id must be a number." data-val-required="The Ctrl_Id field is required." id="ListaTitulosVencidos60DiasPdd_3__Ctrl_Id" name="ListaTitulosVencidos60DiasPdd[3].Ctrl_Id" type="hidden">
+						<input value="" data-val="true" data-val-number="The field AjusteId must be a number." id="ListaTitulosVencidos60DiasPdd_3__AjusteId" name="ListaTitulosVencidos60DiasPdd[3].AjusteId" type="hidden">
+					</td>
+					<td>31/12/2018</td>
+					<td>Gerente assumiu a conta em Nov/18</td>
+					<td>Aline Sales</td>
+					<td>
+						<a href="#" onclick="checkPddCedente(this);return false;">
+							78129
+						</a>
+					</td>
+					<td>ECLETICA AGRICOLA LTDA</td>
+					<td>
+						<a href="#" onclick="checkPddSacado(this);return false;">
+							155025
+						</a>
+					</td>
+					<td>SAMI MAQUINAS E IMPLEMENTOS AG</td>
+					<td>
+						<a href="#" onclick="checkPddBordero(this);return false;">
+							45100
+						</a>
+					</td>
+					<td>27/09/2018</td>
+					<td>30501/1</td>
+					<td>05/10/2018</td>
+					<td>189</td>
+					<td>
+						R$ 30.476,00
+						<input value="30476.00" data-pddvalor="" data-val="true" data-val-number="The field ValorAberto must be a number." id="ListaTitulosVencidos60DiasPdd_3__ValorAberto" name="ListaTitulosVencidos60DiasPdd[3].ValorAberto" type="hidden">
+					</td>
+					<td>Baixado da Cobranca </td>
+			</tr>
+			<tr style="background-color:" title="" class="PrintSome">
+					<td style="text-align: center;" class="PrintSome">
+						<input data-pddexcluir="2001372815" data-val="true" data-val-required="The CheckBox field is required." id="ListaTitulosVencidos60DiasPdd_4__CheckBox" name="ListaTitulosVencidos60DiasPdd[4].CheckBox" onchange="calcular10Pdd(this);" type="checkbox" value="true"><input name="ListaTitulosVencidos60DiasPdd[4].CheckBox" type="hidden" value="false">
+						<input value="2001372815" data-val="true" data-val-number="The field Ctrl_Id must be a number." data-val-required="The Ctrl_Id field is required." id="ListaTitulosVencidos60DiasPdd_4__Ctrl_Id" name="ListaTitulosVencidos60DiasPdd[4].Ctrl_Id" type="hidden">
+						<input value="" data-val="true" data-val-number="The field AjusteId must be a number." id="ListaTitulosVencidos60DiasPdd_4__AjusteId" name="ListaTitulosVencidos60DiasPdd[4].AjusteId" type="hidden">
+					</td>
+					<td>31/01/2019</td>
+					<td> PDD de Reneg. de pendencias anteriores a gerente assumir a conta</td>
+					<td>Aline Sales</td>
+					<td>
+						<a href="#" onclick="checkPddCedente(this);return false;">
+							118669
+						</a>
+					</td>
+					<td>FERGO COMERCIO ATACADISTA</td>
+					<td>
+						<a href="#" onclick="checkPddSacado(this);return false;">
+							118669
+						</a>
+					</td>
+					<td>FERGO COMERCIO ATACADISTA DE B</td>
+					<td>
+						<a href="#" onclick="checkPddBordero(this);return false;">
+							46722
+						</a>
+					</td>
+					<td>08/11/2018</td>
+					<td>CD_FERGO01</td>
+					<td>16/11/2018</td>
+					<td>147</td>
+					<td>
+						R$ 50.000,00
+						<input value="50000.00" data-pddvalor="" data-val="true" data-val-number="The field ValorAberto must be a number." id="ListaTitulosVencidos60DiasPdd_4__ValorAberto" name="ListaTitulosVencidos60DiasPdd[4].ValorAberto" type="hidden">
+					</td>
+					<td>Baixado da Cobranca </td>
+			</tr>
+			<tr style="background-color:" title="" class="PrintSome">
+					<td style="text-align: center;" class="PrintSome">
+						<input data-pddexcluir="2001372816" data-val="true" data-val-required="The CheckBox field is required." id="ListaTitulosVencidos60DiasPdd_5__CheckBox" name="ListaTitulosVencidos60DiasPdd[5].CheckBox" onchange="calcular10Pdd(this);" type="checkbox" value="true"><input name="ListaTitulosVencidos60DiasPdd[5].CheckBox" type="hidden" value="false">
+						<input value="2001372816" data-val="true" data-val-number="The field Ctrl_Id must be a number." data-val-required="The Ctrl_Id field is required." id="ListaTitulosVencidos60DiasPdd_5__Ctrl_Id" name="ListaTitulosVencidos60DiasPdd[5].Ctrl_Id" type="hidden">
+						<input value="" data-val="true" data-val-number="The field AjusteId must be a number." id="ListaTitulosVencidos60DiasPdd_5__AjusteId" name="ListaTitulosVencidos60DiasPdd[5].AjusteId" type="hidden">
+					</td>
+					<td>31/01/2019</td>
+					<td>PDD de Reneg. de pendencias anteriores a gerente assumir a conta</td>
+					<td>Aline Sales</td>
+					<td>
+						<a href="#" onclick="checkPddCedente(this);return false;">
+							118669
+						</a>
+					</td>
+					<td>FERGO COMERCIO ATACADISTA</td>
+					<td>
+						<a href="#" onclick="checkPddSacado(this);return false;">
+							118669
+						</a>
+					</td>
+					<td>FERGO COMERCIO ATACADISTA DE B</td>
+					<td>
+						<a href="#" onclick="checkPddBordero(this);return false;">
+							46722
+						</a>
+					</td>
+					<td>08/11/2018</td>
+					<td>CD_FERGO02</td>
+					<td>22/11/2018</td>
+					<td>141</td>
+					<td>
+						R$ 10.000,00
+						<input value="10000.00" data-pddvalor="" data-val="true" data-val-number="The field ValorAberto must be a number." id="ListaTitulosVencidos60DiasPdd_5__ValorAberto" name="ListaTitulosVencidos60DiasPdd[5].ValorAberto" type="hidden">
+					</td>
+					<td>Baixado da Cobranca </td>
+			</tr>
+			<tr style="background-color:" title="" class="PrintSome">
+					<td style="text-align: center;" class="PrintSome">
+						<input data-pddexcluir="2001372817" data-val="true" data-val-required="The CheckBox field is required." id="ListaTitulosVencidos60DiasPdd_6__CheckBox" name="ListaTitulosVencidos60DiasPdd[6].CheckBox" onchange="calcular10Pdd(this);" type="checkbox" value="true"><input name="ListaTitulosVencidos60DiasPdd[6].CheckBox" type="hidden" value="false">
+						<input value="2001372817" data-val="true" data-val-number="The field Ctrl_Id must be a number." data-val-required="The Ctrl_Id field is required." id="ListaTitulosVencidos60DiasPdd_6__Ctrl_Id" name="ListaTitulosVencidos60DiasPdd[6].Ctrl_Id" type="hidden">
+						<input value="" data-val="true" data-val-number="The field AjusteId must be a number." id="ListaTitulosVencidos60DiasPdd_6__AjusteId" name="ListaTitulosVencidos60DiasPdd[6].AjusteId" type="hidden">
+					</td>
+					<td>31/01/2019</td>
+					<td>PDD de Reneg. de pendencias anteriores a gerente assumir a conta</td>
+					<td>Aline Sales</td>
+					<td>
+						<a href="#" onclick="checkPddCedente(this);return false;">
+							118669
+						</a>
+					</td>
+					<td>FERGO COMERCIO ATACADISTA</td>
+					<td>
+						<a href="#" onclick="checkPddSacado(this);return false;">
+							118669
+						</a>
+					</td>
+					<td>FERGO COMERCIO ATACADISTA DE B</td>
+					<td>
+						<a href="#" onclick="checkPddBordero(this);return false;">
+							46722
+						</a>
+					</td>
+					<td>08/11/2018</td>
+					<td>CD_FERGO03</td>
+					<td>29/11/2018</td>
+					<td>134</td>
+					<td>
+						R$ 10.000,00
+						<input value="10000.00" data-pddvalor="" data-val="true" data-val-number="The field ValorAberto must be a number." id="ListaTitulosVencidos60DiasPdd_6__ValorAberto" name="ListaTitulosVencidos60DiasPdd[6].ValorAberto" type="hidden">
+					</td>
+					<td>Baixado da Cobranca </td>
+			</tr>
+			<tr style="background-color:" title="" class="PrintSome">
+					<td style="text-align: center;" class="PrintSome">
+						<input data-pddexcluir="2001372820" data-val="true" data-val-required="The CheckBox field is required." id="ListaTitulosVencidos60DiasPdd_7__CheckBox" name="ListaTitulosVencidos60DiasPdd[7].CheckBox" onchange="calcular10Pdd(this);" type="checkbox" value="true"><input name="ListaTitulosVencidos60DiasPdd[7].CheckBox" type="hidden" value="false">
+						<input value="2001372820" data-val="true" data-val-number="The field Ctrl_Id must be a number." data-val-required="The Ctrl_Id field is required." id="ListaTitulosVencidos60DiasPdd_7__Ctrl_Id" name="ListaTitulosVencidos60DiasPdd[7].Ctrl_Id" type="hidden">
+						<input value="" data-val="true" data-val-number="The field AjusteId must be a number." id="ListaTitulosVencidos60DiasPdd_7__AjusteId" name="ListaTitulosVencidos60DiasPdd[7].AjusteId" type="hidden">
+					</td>
+					<td>28/02/2019</td>
+					<td>PDD de Reneg. de pendencias anteriores a gerente assumir a conta posteriormente</td>
+					<td>Aline Sales</td>
+					<td>
+						<a href="#" onclick="checkPddCedente(this);return false;">
+							118669
+						</a>
+					</td>
+					<td>FERGO COMERCIO ATACADISTA</td>
+					<td>
+						<a href="#" onclick="checkPddSacado(this);return false;">
+							118669
+						</a>
+					</td>
+					<td>FERGO COMERCIO ATACADISTA DE B</td>
+					<td>
+						<a href="#" onclick="checkPddBordero(this);return false;">
+							46722
+						</a>
+					</td>
+					<td>08/11/2018</td>
+					<td>CD_FERGO06</td>
+					<td>20/12/2018</td>
+					<td>113</td>
+					<td>
+						R$ 5.000,00
+						<input value="5000.00" data-pddvalor="" data-val="true" data-val-number="The field ValorAberto must be a number." id="ListaTitulosVencidos60DiasPdd_7__ValorAberto" name="ListaTitulosVencidos60DiasPdd[7].ValorAberto" type="hidden">
+					</td>
+					<td>Baixado da Cobranca </td>
+			</tr>
+			<tr style="background-color:" title="" class="PrintSome">
+					<td style="text-align: center;" class="PrintSome">
+						<input data-pddexcluir="2001372821" data-val="true" data-val-required="The CheckBox field is required." id="ListaTitulosVencidos60DiasPdd_8__CheckBox" name="ListaTitulosVencidos60DiasPdd[8].CheckBox" onchange="calcular10Pdd(this);" type="checkbox" value="true"><input name="ListaTitulosVencidos60DiasPdd[8].CheckBox" type="hidden" value="false">
+						<input value="2001372821" data-val="true" data-val-number="The field Ctrl_Id must be a number." data-val-required="The Ctrl_Id field is required." id="ListaTitulosVencidos60DiasPdd_8__Ctrl_Id" name="ListaTitulosVencidos60DiasPdd[8].Ctrl_Id" type="hidden">
+						<input value="" data-val="true" data-val-number="The field AjusteId must be a number." id="ListaTitulosVencidos60DiasPdd_8__AjusteId" name="ListaTitulosVencidos60DiasPdd[8].AjusteId" type="hidden">
+					</td>
+					<td>28/02/2019</td>
+					<td>PDD de Reneg. de pendencias anteriores a gerente assumir a conta posteriormente</td>
+					<td>Aline Sales</td>
+					<td>
+						<a href="#" onclick="checkPddCedente(this);return false;">
+							118669
+						</a>
+					</td>
+					<td>FERGO COMERCIO ATACADISTA</td>
+					<td>
+						<a href="#" onclick="checkPddSacado(this);return false;">
+							118669
+						</a>
+					</td>
+					<td>FERGO COMERCIO ATACADISTA DE B</td>
+					<td>
+						<a href="#" onclick="checkPddBordero(this);return false;">
+							46722
+						</a>
+					</td>
+					<td>08/11/2018</td>
+					<td>CD_FERGO07</td>
+					<td>27/12/2018</td>
+					<td>106</td>
+					<td>
+						R$ 5.000,00
+						<input value="5000.00" data-pddvalor="" data-val="true" data-val-number="The field ValorAberto must be a number." id="ListaTitulosVencidos60DiasPdd_8__ValorAberto" name="ListaTitulosVencidos60DiasPdd[8].ValorAberto" type="hidden">
+					</td>
+					<td>Baixado da Cobranca </td>
+			</tr>
+			<tr style="background-color:" title="" class="PrintSome">
+					<td style="text-align: center;" class="PrintSome">
+						<input data-pddexcluir="2001372818" data-val="true" data-val-required="The CheckBox field is required." id="ListaTitulosVencidos60DiasPdd_9__CheckBox" name="ListaTitulosVencidos60DiasPdd[9].CheckBox" onchange="calcular10Pdd(this);" type="checkbox" value="true"><input name="ListaTitulosVencidos60DiasPdd[9].CheckBox" type="hidden" value="false">
+						<input value="2001372818" data-val="true" data-val-number="The field Ctrl_Id must be a number." data-val-required="The Ctrl_Id field is required." id="ListaTitulosVencidos60DiasPdd_9__Ctrl_Id" name="ListaTitulosVencidos60DiasPdd[9].Ctrl_Id" type="hidden">
+						<input value="" data-val="true" data-val-number="The field AjusteId must be a number." id="ListaTitulosVencidos60DiasPdd_9__AjusteId" name="ListaTitulosVencidos60DiasPdd[9].AjusteId" type="hidden">
+					</td>
+					<td>28/02/2019</td>
+					<td>PDD de Reneg. de pendencias anteriores a gerente assumir a conta posteriormente</td>
+					<td>Aline Sales</td>
+					<td>
+						<a href="#" onclick="checkPddCedente(this);return false;">
+							118669
+						</a>
+					</td>
+					<td>FERGO COMERCIO ATACADISTA</td>
+					<td>
+						<a href="#" onclick="checkPddSacado(this);return false;">
+							118669
+						</a>
+					</td>
+					<td>FERGO COMERCIO ATACADISTA DE B</td>
+					<td>
+						<a href="#" onclick="checkPddBordero(this);return false;">
+							46722
+						</a>
+					</td>
+					<td>08/11/2018</td>
+					<td>CD_FERGO04</td>
+					<td>06/12/2018</td>
+					<td>127</td>
+					<td>
+						R$ 5.000,00
+						<input value="5000.00" data-pddvalor="" data-val="true" data-val-number="The field ValorAberto must be a number." id="ListaTitulosVencidos60DiasPdd_9__ValorAberto" name="ListaTitulosVencidos60DiasPdd[9].ValorAberto" type="hidden">
+					</td>
+					<td>Baixado da Cobranca </td>
+			</tr>
+			<tr style="background-color:" title="" class="PrintSome">
+					<td style="text-align: center;" class="PrintSome">
+						<input data-pddexcluir="2001372819" data-val="true" data-val-required="The CheckBox field is required." id="ListaTitulosVencidos60DiasPdd_10__CheckBox" name="ListaTitulosVencidos60DiasPdd[10].CheckBox" onchange="calcular10Pdd(this);" type="checkbox" value="true"><input name="ListaTitulosVencidos60DiasPdd[10].CheckBox" type="hidden" value="false">
+						<input value="2001372819" data-val="true" data-val-number="The field Ctrl_Id must be a number." data-val-required="The Ctrl_Id field is required." id="ListaTitulosVencidos60DiasPdd_10__Ctrl_Id" name="ListaTitulosVencidos60DiasPdd[10].Ctrl_Id" type="hidden">
+						<input value="" data-val="true" data-val-number="The field AjusteId must be a number." id="ListaTitulosVencidos60DiasPdd_10__AjusteId" name="ListaTitulosVencidos60DiasPdd[10].AjusteId" type="hidden">
+					</td>
+					<td>28/02/2019</td>
+					<td>PDD de Reneg. de pendencias anteriores a gerente assumir a conta posteriormente</td>
+					<td>Aline Sales</td>
+					<td>
+						<a href="#" onclick="checkPddCedente(this);return false;">
+							118669
+						</a>
+					</td>
+					<td>FERGO COMERCIO ATACADISTA</td>
+					<td>
+						<a href="#" onclick="checkPddSacado(this);return false;">
+							118669
+						</a>
+					</td>
+					<td>FERGO COMERCIO ATACADISTA DE B</td>
+					<td>
+						<a href="#" onclick="checkPddBordero(this);return false;">
+							46722
+						</a>
+					</td>
+					<td>08/11/2018</td>
+					<td>CD_FERGO05</td>
+					<td>13/12/2018</td>
+					<td>120</td>
+					<td>
+						R$ 5.000,00
+						<input value="5000.00" data-pddvalor="" data-val="true" data-val-number="The field ValorAberto must be a number." id="ListaTitulosVencidos60DiasPdd_10__ValorAberto" name="ListaTitulosVencidos60DiasPdd[10].ValorAberto" type="hidden">
+					</td>
+					<td>Baixado da Cobranca </td>
+			</tr>
+			<tr style="background-color:" title="" class="PrintSome">
+					<td style="text-align: center;" class="PrintSome">
+						<input data-pddexcluir="2001372825" data-val="true" data-val-required="The CheckBox field is required." id="ListaTitulosVencidos60DiasPdd_11__CheckBox" name="ListaTitulosVencidos60DiasPdd[11].CheckBox" onchange="calcular10Pdd(this);" type="checkbox" value="true"><input name="ListaTitulosVencidos60DiasPdd[11].CheckBox" type="hidden" value="false">
+						<input value="2001372825" data-val="true" data-val-number="The field Ctrl_Id must be a number." data-val-required="The Ctrl_Id field is required." id="ListaTitulosVencidos60DiasPdd_11__Ctrl_Id" name="ListaTitulosVencidos60DiasPdd[11].Ctrl_Id" type="hidden">
+						<input value="" data-val="true" data-val-number="The field AjusteId must be a number." id="ListaTitulosVencidos60DiasPdd_11__AjusteId" name="ListaTitulosVencidos60DiasPdd[11].AjusteId" type="hidden">
+					</td>
+					<td>31/03/2019</td>
+					<td>Renegociação Pdd Antiga</td>
+					<td>Aline Sales</td>
+					<td>
+						<a href="#" onclick="checkPddCedente(this);return false;">
+							118669
+						</a>
+					</td>
+					<td>FERGO COMERCIO ATACADISTA</td>
+					<td>
+						<a href="#" onclick="checkPddSacado(this);return false;">
+							118669
+						</a>
+					</td>
+					<td>FERGO COMERCIO ATACADISTA DE B</td>
+					<td>
+						<a href="#" onclick="checkPddBordero(this);return false;">
+							46722
+						</a>
+					</td>
+					<td>08/11/2018</td>
+					<td>CD_FERGO11</td>
+					<td>24/01/2019</td>
+					<td>78</td>
+					<td>
+						R$ 5.000,00
+						<input value="5000.00" data-pddvalor="" data-val="true" data-val-number="The field ValorAberto must be a number." id="ListaTitulosVencidos60DiasPdd_11__ValorAberto" name="ListaTitulosVencidos60DiasPdd[11].ValorAberto" type="hidden">
+					</td>
+					<td>Baixado da Cobranca </td>
+			</tr>
+			<tr style="background-color:" title="" class="PrintSome">
+					<td style="text-align: center;" class="PrintSome">
+						<input data-pddexcluir="2001372823" data-val="true" data-val-required="The CheckBox field is required." id="ListaTitulosVencidos60DiasPdd_12__CheckBox" name="ListaTitulosVencidos60DiasPdd[12].CheckBox" onchange="calcular10Pdd(this);" type="checkbox" value="true"><input name="ListaTitulosVencidos60DiasPdd[12].CheckBox" type="hidden" value="false">
+						<input value="2001372823" data-val="true" data-val-number="The field Ctrl_Id must be a number." data-val-required="The Ctrl_Id field is required." id="ListaTitulosVencidos60DiasPdd_12__Ctrl_Id" name="ListaTitulosVencidos60DiasPdd[12].Ctrl_Id" type="hidden">
+						<input value="" data-val="true" data-val-number="The field AjusteId must be a number." id="ListaTitulosVencidos60DiasPdd_12__AjusteId" name="ListaTitulosVencidos60DiasPdd[12].AjusteId" type="hidden">
+					</td>
+					<td>31/03/2019</td>
+					<td>Renegociação Pdd Antiga</td>
+					<td>Aline Sales</td>
+					<td>
+						<a href="#" onclick="checkPddCedente(this);return false;">
+							118669
+						</a>
+					</td>
+					<td>FERGO COMERCIO ATACADISTA</td>
+					<td>
+						<a href="#" onclick="checkPddSacado(this);return false;">
+							118669
+						</a>
+					</td>
+					<td>FERGO COMERCIO ATACADISTA DE B</td>
+					<td>
+						<a href="#" onclick="checkPddBordero(this);return false;">
+							46722
+						</a>
+					</td>
+					<td>08/11/2018</td>
+					<td>CD_FERGO09</td>
+					<td>10/01/2019</td>
+					<td>92</td>
+					<td>
+						R$ 5.000,00
+						<input value="5000.00" data-pddvalor="" data-val="true" data-val-number="The field ValorAberto must be a number." id="ListaTitulosVencidos60DiasPdd_12__ValorAberto" name="ListaTitulosVencidos60DiasPdd[12].ValorAberto" type="hidden">
+					</td>
+					<td>Baixado da Cobranca </td>
+			</tr>
+			<tr style="background-color:" title="" class="PrintSome">
+					<td style="text-align: center;" class="PrintSome">
+						<input data-pddexcluir="2001372822" data-val="true" data-val-required="The CheckBox field is required." id="ListaTitulosVencidos60DiasPdd_13__CheckBox" name="ListaTitulosVencidos60DiasPdd[13].CheckBox" onchange="calcular10Pdd(this);" type="checkbox" value="true"><input name="ListaTitulosVencidos60DiasPdd[13].CheckBox" type="hidden" value="false">
+						<input value="2001372822" data-val="true" data-val-number="The field Ctrl_Id must be a number." data-val-required="The Ctrl_Id field is required." id="ListaTitulosVencidos60DiasPdd_13__Ctrl_Id" name="ListaTitulosVencidos60DiasPdd[13].Ctrl_Id" type="hidden">
+						<input value="" data-val="true" data-val-number="The field AjusteId must be a number." id="ListaTitulosVencidos60DiasPdd_13__AjusteId" name="ListaTitulosVencidos60DiasPdd[13].AjusteId" type="hidden">
+					</td>
+					<td>31/03/2019</td>
+					<td>Renegociação Pdd Antiga</td>
+					<td>Aline Sales</td>
+					<td>
+						<a href="#" onclick="checkPddCedente(this);return false;">
+							118669
+						</a>
+					</td>
+					<td>FERGO COMERCIO ATACADISTA</td>
+					<td>
+						<a href="#" onclick="checkPddSacado(this);return false;">
+							118669
+						</a>
+					</td>
+					<td>FERGO COMERCIO ATACADISTA DE B</td>
+					<td>
+						<a href="#" onclick="checkPddBordero(this);return false;">
+							46722
+						</a>
+					</td>
+					<td>08/11/2018</td>
+					<td>CD_FERGO08</td>
+					<td>03/01/2019</td>
+					<td>99</td>
+					<td>
+						R$ 5.000,00
+						<input value="5000.00" data-pddvalor="" data-val="true" data-val-number="The field ValorAberto must be a number." id="ListaTitulosVencidos60DiasPdd_13__ValorAberto" name="ListaTitulosVencidos60DiasPdd[13].ValorAberto" type="hidden">
+					</td>
+					<td>Baixado da Cobranca </td>
+			</tr>
+			<tr style="background-color:" title="" class="PrintSome">
+					<td style="text-align: center;" class="PrintSome">
+						<input data-pddexcluir="2001372824" data-val="true" data-val-required="The CheckBox field is required." id="ListaTitulosVencidos60DiasPdd_14__CheckBox" name="ListaTitulosVencidos60DiasPdd[14].CheckBox" onchange="calcular10Pdd(this);" type="checkbox" value="true"><input name="ListaTitulosVencidos60DiasPdd[14].CheckBox" type="hidden" value="false">
+						<input value="2001372824" data-val="true" data-val-number="The field Ctrl_Id must be a number." data-val-required="The Ctrl_Id field is required." id="ListaTitulosVencidos60DiasPdd_14__Ctrl_Id" name="ListaTitulosVencidos60DiasPdd[14].Ctrl_Id" type="hidden">
+						<input value="" data-val="true" data-val-number="The field AjusteId must be a number." id="ListaTitulosVencidos60DiasPdd_14__AjusteId" name="ListaTitulosVencidos60DiasPdd[14].AjusteId" type="hidden">
+					</td>
+					<td>31/03/2019</td>
+					<td>Renegociação Pdd Antiga</td>
+					<td>Aline Sales</td>
+					<td>
+						<a href="#" onclick="checkPddCedente(this);return false;">
+							118669
+						</a>
+					</td>
+					<td>FERGO COMERCIO ATACADISTA</td>
+					<td>
+						<a href="#" onclick="checkPddSacado(this);return false;">
+							118669
+						</a>
+					</td>
+					<td>FERGO COMERCIO ATACADISTA DE B</td>
+					<td>
+						<a href="#" onclick="checkPddBordero(this);return false;">
+							46722
+						</a>
+					</td>
+					<td>08/11/2018</td>
+					<td>CD_FERGO10</td>
+					<td>17/01/2019</td>
+					<td>85</td>
+					<td>
+						R$ 5.000,00
+						<input value="5000.00" data-pddvalor="" data-val="true" data-val-number="The field ValorAberto must be a number." id="ListaTitulosVencidos60DiasPdd_14__ValorAberto" name="ListaTitulosVencidos60DiasPdd[14].ValorAberto" type="hidden">
+					</td>
+					<td>Baixado da Cobranca </td>
+			</tr>
+			<tr style="background-color:lightgray" title="Pdd inserido nos cálculos" class="">
+					<td style="text-align: center;" class="PrintSome">
+						<input data-pddexcluirinclusos="2001430114" data-val="true" data-val-required="The CheckBox field is required." id="ListaTitulosVencidos60DiasPdd_15__CheckBox" name="ListaTitulosVencidos60DiasPdd[15].CheckBox" type="checkbox" value="true"><input name="ListaTitulosVencidos60DiasPdd[15].CheckBox" type="hidden" value="false">
+						<input value="2001430114" data-val="true" data-val-number="The field Ctrl_Id must be a number." data-val-required="The Ctrl_Id field is required." id="ListaTitulosVencidos60DiasPdd_15__Ctrl_Id" name="ListaTitulosVencidos60DiasPdd[15].Ctrl_Id" type="hidden">
+						<input value="125" data-val="true" data-val-number="The field AjusteId must be a number." id="ListaTitulosVencidos60DiasPdd_15__AjusteId" name="ListaTitulosVencidos60DiasPdd[15].AjusteId" type="hidden">
+					</td>
+					<td>31/03/2019</td>
+					<td>Descontado Com. 03/2019</td>
+					<td>Aline Sales</td>
+					<td>
+						<a href="#" onclick="checkPddCedente(this);return false;">
+							90143
+						</a>
+					</td>
+					<td>KUCHO'S DISTRIBUIDORA DE </td>
+					<td>
+						<a href="#" onclick="checkPddSacado(this);return false;">
+							171483
+						</a>
+					</td>
+					<td>HARAS MANAISA LTDA ME</td>
+					<td>
+						<a href="#" onclick="checkPddBordero(this);return false;">
+							48444
+						</a>
+					</td>
+					<td>14/12/2018</td>
+					<td>213379/004</td>
+					<td>23/01/2019</td>
+					<td>79</td>
+					<td>
+						R$ 12.752,50
+						<input value="12752.50" data-val="true" data-val-number="The field ValorAberto must be a number." id="ListaTitulosVencidos60DiasPdd_15__ValorAberto" name="ListaTitulosVencidos60DiasPdd[15].ValorAberto" type="hidden">
+					</td>
+					<td>Protestado          </td>
+			</tr>
+			<tr style="background-color:lightgray" title="Pdd inserido nos cálculos" class="">
+					<td style="text-align: center;" class="PrintSome">
+						<input data-pddexcluirinclusos="2001430113" data-val="true" data-val-required="The CheckBox field is required." id="ListaTitulosVencidos60DiasPdd_16__CheckBox" name="ListaTitulosVencidos60DiasPdd[16].CheckBox" type="checkbox" value="true"><input name="ListaTitulosVencidos60DiasPdd[16].CheckBox" type="hidden" value="false">
+						<input value="2001430113" data-val="true" data-val-number="The field Ctrl_Id must be a number." data-val-required="The Ctrl_Id field is required." id="ListaTitulosVencidos60DiasPdd_16__Ctrl_Id" name="ListaTitulosVencidos60DiasPdd[16].Ctrl_Id" type="hidden">
+						<input value="125" data-val="true" data-val-number="The field AjusteId must be a number." id="ListaTitulosVencidos60DiasPdd_16__AjusteId" name="ListaTitulosVencidos60DiasPdd[16].AjusteId" type="hidden">
+					</td>
+					<td>31/03/2019</td>
+					<td>Descontado Com. 03/2019</td>
+					<td>Aline Sales</td>
+					<td>
+						<a href="#" onclick="checkPddCedente(this);return false;">
+							90143
+						</a>
+					</td>
+					<td>KUCHO'S DISTRIBUIDORA DE </td>
+					<td>
+						<a href="#" onclick="checkPddSacado(this);return false;">
+							171483
+						</a>
+					</td>
+					<td>HARAS MANAISA LTDA ME</td>
+					<td>
+						<a href="#" onclick="checkPddBordero(this);return false;">
+							48444
+						</a>
+					</td>
+					<td>14/12/2018</td>
+					<td>213379/003</td>
+					<td>13/01/2019</td>
+					<td>88</td>
+					<td>
+						R$ 12.752,50
+						<input value="12752.50" data-val="true" data-val-number="The field ValorAberto must be a number." id="ListaTitulosVencidos60DiasPdd_16__ValorAberto" name="ListaTitulosVencidos60DiasPdd[16].ValorAberto" type="hidden">
+					</td>
+					<td>Protestado          </td>
+			</tr>
+			<tr style="background-color:lightgray" title="Pdd inserido nos cálculos" class="">
+					<td style="text-align: center;" class="PrintSome">
+						<input data-pddexcluirinclusos="2001460958" data-val="true" data-val-required="The CheckBox field is required." id="ListaTitulosVencidos60DiasPdd_17__CheckBox" name="ListaTitulosVencidos60DiasPdd[17].CheckBox" type="checkbox" value="true"><input name="ListaTitulosVencidos60DiasPdd[17].CheckBox" type="hidden" value="false">
+						<input value="2001460958" data-val="true" data-val-number="The field Ctrl_Id must be a number." data-val-required="The Ctrl_Id field is required." id="ListaTitulosVencidos60DiasPdd_17__Ctrl_Id" name="ListaTitulosVencidos60DiasPdd[17].Ctrl_Id" type="hidden">
+						<input value="125" data-val="true" data-val-number="The field AjusteId must be a number." id="ListaTitulosVencidos60DiasPdd_17__AjusteId" name="ListaTitulosVencidos60DiasPdd[17].AjusteId" type="hidden">
+					</td>
+					<td>31/03/2019</td>
+					<td>Descontado Com. 03/2019</td>
+					<td>Aline Sales</td>
+					<td>
+						<a href="#" onclick="checkPddCedente(this);return false;">
+							90143
+						</a>
+					</td>
+					<td>KUCHO'S DISTRIBUIDORA DE </td>
+					<td>
+						<a href="#" onclick="checkPddSacado(this);return false;">
+							171483
+						</a>
+					</td>
+					<td>HARAS MANAISA LTDA ME</td>
+					<td>
+						<a href="#" onclick="checkPddBordero(this);return false;">
+							49241
+						</a>
+					</td>
+					<td>11/01/2019</td>
+					<td>214004</td>
+					<td>25/01/2019</td>
+					<td>77</td>
+					<td>
+						R$ 11.634,36
+						<input value="11634.36" data-val="true" data-val-number="The field ValorAberto must be a number." id="ListaTitulosVencidos60DiasPdd_17__ValorAberto" name="ListaTitulosVencidos60DiasPdd[17].ValorAberto" type="hidden">
+					</td>
+					<td>Baixado da Cobranca </td>
+			</tr>
+			<tr style="background-color:lightgray" title="Pdd inserido nos cálculos" class="">
+					<td style="text-align: center;" class="PrintSome">
+						<input data-pddexcluirinclusos="2001453532" data-val="true" data-val-required="The CheckBox field is required." id="ListaTitulosVencidos60DiasPdd_18__CheckBox" name="ListaTitulosVencidos60DiasPdd[18].CheckBox" type="checkbox" value="true"><input name="ListaTitulosVencidos60DiasPdd[18].CheckBox" type="hidden" value="false">
+						<input value="2001453532" data-val="true" data-val-number="The field Ctrl_Id must be a number." data-val-required="The Ctrl_Id field is required." id="ListaTitulosVencidos60DiasPdd_18__Ctrl_Id" name="ListaTitulosVencidos60DiasPdd[18].Ctrl_Id" type="hidden">
+						<input value="125" data-val="true" data-val-number="The field AjusteId must be a number." id="ListaTitulosVencidos60DiasPdd_18__AjusteId" name="ListaTitulosVencidos60DiasPdd[18].AjusteId" type="hidden">
+					</td>
+					<td>31/03/2019</td>
+					<td>Descontado Com. 03/2019</td>
+					<td>Aline Sales</td>
+					<td>
+						<a href="#" onclick="checkPddCedente(this);return false;">
+							90143
+						</a>
+					</td>
+					<td>KUCHO'S DISTRIBUIDORA DE </td>
+					<td>
+						<a href="#" onclick="checkPddSacado(this);return false;">
+							171483
+						</a>
+					</td>
+					<td>HARAS MANAISA LTDA ME</td>
+					<td>
+						<a href="#" onclick="checkPddBordero(this);return false;">
+							49065
+						</a>
+					</td>
+					<td>07/01/2019</td>
+					<td>213873/1</td>
+					<td>22/01/2019</td>
+					<td>80</td>
+					<td>
+						R$ 11.569,80
+						<input value="11569.80" data-val="true" data-val-number="The field ValorAberto must be a number." id="ListaTitulosVencidos60DiasPdd_18__ValorAberto" name="ListaTitulosVencidos60DiasPdd[18].ValorAberto" type="hidden">
+					</td>
+					<td>Protestado          </td>
+			</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<th class="PrintSome"></th>
+			<th><div class="PrintBackgroundColor">Dt.Ref.</div></th>
+			<th><div class="PrintBackgroundColor">Obs</div></th>
+			<th><div class="PrintBackgroundColor">Gerente</div></th>
+			<th><div class="PrintBackgroundColor">Cód.Ced.</div></th>
+			<th><div class="PrintBackgroundColor">Cedente</div></th>
+			<th><div class="PrintBackgroundColor">Cód.Sac.</div></th>
+			<th><div class="PrintBackgroundColor">Sacado</div></th>
+			<th><div class="PrintBackgroundColor">Borderô</div></th>
+			<th><div class="PrintBackgroundColor">Dt.Borderô</div></th>
+			<th><div class="PrintBackgroundColor">Dcto</div></th>
+			<th><div class="PrintBackgroundColor">Vencimento</div></th>
+			<th><div class="PrintBackgroundColor">Dias</div></th>
+			<th><div class="PrintBackgroundColor">Valor</div></th>
+			<th><div class="PrintBackgroundColor">Estado</div></th>
+		</tr>
+		<tr>
+
+			<th class="PrintSome" colspan="13"><div class="PrintBackgroundColor">Total</div></th>
+			<th class="PrintAparece"><div class="PrintBackgroundColor">R$ 75.631,16</div></th>
+			<th><div class="PrintBackgroundColor">&nbsp;</div></th>
+		</tr>
+	</tfoot>
+</table>
+<script>
+function filter(tableId,filterInput){
+	var table = document.getElementById(tableId);
+	var searchText = filterInput;
+	
+	for(var k=0;k<table.children.length;k++){
+		if(table.children[k].tagName == "TBODY"){
+			var tb = table.children[k].children;
+			for(var i=0;i<tb.length;i++){
+				tem = true;
+				var tr = table.children[k].children[i].children;
+				for(var j=0;j<tr.length;j++){
+					if(tr[j].innerText.toUpperCase().includes(searchText.toUpperCase())){
+						tem = true;
+						break;
+					}else{
+						tem = false;
+					}
+				}
+				if(tem){
+					tb[i].style.display = "";
+				}else{
+					tb[i].style.display = "none";
+				}
+			}
+		}
+	}
+}
+</script>
+</body>
+</html>
